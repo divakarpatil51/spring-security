@@ -3,7 +3,6 @@ package com.springsecurity.jdbc;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,7 +14,6 @@ import com.springsecurity.config.SecurityConfiguration;
 public class JdbcCustomSchemaSecurityConfiguration extends SecurityConfiguration {
 
 	@Autowired
-	//	@Qualifier("h2Datasource")
 	private DataSource dataSource;
 
 	// Following method is used for Authentication purpose
