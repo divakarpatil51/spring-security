@@ -1,8 +1,10 @@
-package com.springsecurity.securityconfig;
+package com.springsecurity.inmemory;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+import com.springsecurity.config.SecurityConfiguration;
 
 @ConditionalOnProperty(name = "authentication-type", havingValue = "in-memory")
 @EnableWebSecurity

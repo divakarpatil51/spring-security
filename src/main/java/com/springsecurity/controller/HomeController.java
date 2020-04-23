@@ -12,13 +12,13 @@ public class HomeController {
 	public String getText() {
 		return "<h1>Welcome!</h1>";
 	}
-	
-	@RolesAllowed(value = {"ADMIN", "USER"})
+
+	@RolesAllowed(value = { "ADMIN", "USER" })
 	@GetMapping("/user")
 	public String user() {
 		return "<h1>Welcome User!</h1>";
 	}
-	
+
 	@RolesAllowed(value = "ADMIN")
 	@GetMapping("/admin")
 	public String admin() {

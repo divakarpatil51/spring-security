@@ -1,18 +1,22 @@
-package com.springsecurity.securityconfig;
+package com.springsecurity.jdbc;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 
+import com.springsecurity.config.SecurityConfiguration;
+
 @ConditionalOnProperty(name = "authentication-type", havingValue = "h2-default-schema")
 @EnableWebSecurity
-public class H2DefaultSchemaSecurityConfiguration extends SecurityConfiguration {
+public class JdbcDefaultSchemaSecurityConfiguration extends SecurityConfiguration {
 	
 	@Autowired
+	//@Qualifier("h2Datasource")
 	private DataSource dataSource;
 
 	// Following method is used for Authentication purpose

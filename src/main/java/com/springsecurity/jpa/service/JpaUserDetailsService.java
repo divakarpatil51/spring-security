@@ -1,4 +1,4 @@
-package com.springsecurity.jpa;
+package com.springsecurity.jpa.service;
 
 import java.util.Optional;
 
@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.springsecurity.jpa.model.User;
+import com.springsecurity.jpa.repository.UserRepository;
 
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
@@ -19,10 +20,7 @@ public class JpaUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		Optional<User> user = userRepository.findByUserName(username);
-		if (!user.isPresent()) {
-			throw new UsernameNotFoundException("User not found");
-		}
-		return new JpaUserDetails(user.get());
+		return user.map(JpaUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("User not found"));
 	}
 
 }

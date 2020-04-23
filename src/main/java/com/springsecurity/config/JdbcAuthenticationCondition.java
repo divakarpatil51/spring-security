@@ -1,10 +1,10 @@
-package com.springsecurity.datasourceconfig;
+package com.springsecurity.config;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
-public class H2AuthenticationCondition implements Condition{
+public class JdbcAuthenticationCondition implements Condition{
 
 	@Override
 	public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {

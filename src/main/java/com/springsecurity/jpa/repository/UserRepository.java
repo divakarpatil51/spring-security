@@ -1,4 +1,4 @@
-package com.springsecurity.jpa;
+package com.springsecurity.jpa.repository;
 
 import java.util.Optional;
 
