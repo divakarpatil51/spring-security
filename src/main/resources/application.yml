@@ -1,5 +1,5 @@
-#Authentication types: in-memory, jdbc-authentication, jpa-authentication
-authentication-type: jpa-authentication
+#Authentication types: in-memory, jdbc-authentication, jpa-authentication, ldap-authentication
+authentication-type: ldap-authentication
 
 spring:
   datasource:
@@ -17,6 +17,12 @@ spring:
     password: password
     username: postgres
     continue-on-error: true
+  
+  ldap:
+    embedded:
+      port: 8389
+      ldif: classpath:ldap-data.ldif #ldif --> LDAP data interchange format
+      base-dn: dc=springframework,dc=org
 
 logging:
   level:
