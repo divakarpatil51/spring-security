@@ -1,4 +1,4 @@
-package com.springsecurity.jpa;
+package com.springsecurity.jpa.service;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

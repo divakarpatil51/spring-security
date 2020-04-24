@@ -1,16 +1,19 @@
-package com.springsecurity.jpa;
+package com.springsecurity.jpa.service;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.springsecurity.jpa.model.User;
+import com.springsecurity.jpa.repository.UserRepository;
 
 @Service
+@ConditionalOnProperty(name = "authentication-type", havingValue = "jpa-authentication")
 public class JpaUserDetailsService implements UserDetailsService {
 
 	@Autowired
@@ -19,10 +22,7 @@ public class JpaUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		Optional<User> user = userRepository.findByUserName(username);
-		if (!user.isPresent()) {
-			throw new UsernameNotFoundException("User not found");
-		}
-		return new JpaUserDetails(user.get());
+		return user.map(JpaUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("User not found"));
 	}
 
 }

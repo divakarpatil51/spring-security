@@ -1,4 +1,4 @@
-package com.springsecurity.securityconfig;
+package com.springsecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -6,6 +6,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * The base class for SecurityConfiguration
+ */
 public abstract class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	protected static final String ROLE_ADMIN = "ADMIN";
@@ -18,9 +21,6 @@ public abstract class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		// antmatchers are skipped. Hence, put the most restrictive URLs at the top
 		http.authorizeRequests().antMatchers("/admin").hasRole(ROLE_ADMIN).antMatchers("/user").hasAnyRole(ROLE_USER, ROLE_ADMIN)
 				.antMatchers("/").permitAll().and().formLogin();
-		//There are two things in authorization:
-		//1. URL level
-		//2. Method level
 	}
 
 	//TODO: Use a valid password encoder.
