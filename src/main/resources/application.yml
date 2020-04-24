@@ -1,0 +1,23 @@
+#Authentication types: in-memory, jdbc-authentication, jpa-authentication
+authentication-type: jpa-authentication
+
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    initialization-mode: always # Required for loading .sql files
+    jdbc-url: jdbc:h2:mem:jdbcdb
+    password: ''
+    username: sa
+    continue-on-error: true
+    
+  postgres-datasource:
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always # Required for loading .sql files
+    jdbcUrl: jdbc:postgresql://localhost/Springsecurity
+    password: password
+    username: postgres
+    continue-on-error: true
+
+logging:
+  level:
+    org.springframework: INFO

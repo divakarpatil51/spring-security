@@ -1,4 +1,3 @@
--- User flyway for db
 insert into users(id, username, password, active) values(1, 'user', 'user', true);
 insert into users(id, username, password, active) values(2, 'admin', 'admin', true);
 

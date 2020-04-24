@@ -6,8 +6,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 import com.springsecurity.config.SecurityConfiguration;
 
-@ConditionalOnProperty(name = "authentication-type", havingValue = "in-memory")
+/**
+ * The configuration class for in-memory security authentication.
+ */
 @EnableWebSecurity
+@ConditionalOnProperty(name = "authentication-type", havingValue = "in-memory")
 public class InMemorySecurityConfiguration extends SecurityConfiguration {
 
 	// Following method is used for Authentication purpose

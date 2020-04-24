@@ -8,8 +8,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.springsecurity.config.SecurityConfiguration;
 
+/**
+ * The configuration class for JPA security authentication.
+ */
 @EnableWebSecurity
-@ConditionalOnProperty(name = "authentication-type", havingValue = "db-authentication")
+@ConditionalOnProperty(name = "authentication-type", havingValue = "jpa-authentication")
 public class JpaSecurityConfiguration extends SecurityConfiguration {
 
 	@Autowired
