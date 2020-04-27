@@ -1,5 +1,5 @@
-#Authentication types: in-memory, jdbc-authentication, jpa-authentication, ldap-authentication
-authentication-type: ldap-authentication
+#Authentication types: in-memory, jdbc-authentication, jpa-authentication, ldap-authentication, jwt-authentication
+authentication-type: jwt-authentication
 
 spring:
   datasource:
