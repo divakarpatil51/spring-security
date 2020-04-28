@@ -5,7 +5,7 @@ This repo contains implementation for following authentication mechanisms using 
 1. In-memory Authentication.
 2. JDBC Authentication using H2 database
 3. JPA Authentication using PostgreSQL
-4. LDAP Authentication (Not yet implemented)
+4. LDAP Authentication 
 5. JWT Token Authentication (Not yet implemented)
 6. OAuth2.0 Authentication (Not yet implemented)
 
@@ -49,7 +49,7 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 
 **Running application using Docker:**
-
+(Not yet implemented)
 *  Start the application using following command:
 
 ```
