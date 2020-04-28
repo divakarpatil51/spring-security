@@ -6,7 +6,7 @@ This repo contains implementation for following authentication mechanisms using 
 2. JDBC Authentication using H2 database
 3. JPA Authentication using PostgreSQL
 4. LDAP Authentication 
-5. JWT Token Authentication (Not yet implemented)
+5. JWT Token Authentication
 6. OAuth2.0 Authentication (Not yet implemented)
 
 ## Getting Started
